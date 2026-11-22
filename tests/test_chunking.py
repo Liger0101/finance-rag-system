@@ -1,0 +1,54 @@
+from src.chunking import chunk_text_by_sentences,text_chunking
+import pytest   # pytest的使用需要将函数名设置为test_*的格式
+
+# 1.固定长度切分测试
+def test_text_chunking():
+    text = "A" * 250
+
+    chunks = text_chunking(
+        text,
+        chunk_size=100,
+        overlap=20
+    )
+
+    assert len(chunks) == 3 # assert则检查结果是否和预期一致，本句用于判断生成的chunk数
+    assert len(chunks[0]) == 100
+    assert len(chunks[1]) == 100
+    assert len(chunks[2]) == 90
+
+# 2.异常输入测试，固定长度切分
+def test_text_chunking_invalid_chunk_size():
+    with pytest.raises(ValueError): # pytest.raises(): 用于检查异常是否按照预期发生
+        text_chunking("Hello World", chunk_size=0)  # 测试当chunk大小为0时的异常抛出
+
+
+def test_text_chunking_invalid_overlap():
+    with pytest.raises(ValueError):
+        text_chunking("Hello World", chunk_size=100, overlap=100)   # 测试overlap超过chunk大小时的异常抛出
+
+def test_chunk_text_by_sentences():
+    text = "公司成立于2000年。公司总部位于上海。公司主营软件开发。"
+
+    chunks = chunk_text_by_sentences(
+        text,
+        chunk_size=30,
+        overlap=5
+    )
+
+    assert len(chunks) > 0  # 判断切分的生成
+    assert all(isinstance(chunk, str) for chunk in chunks)  # 判断每个chunk都是字符串
+    assert "".join(chunks).strip() != ""    # 判断不是空内容
+
+# 3.测试单个句子长度超过 chunk_size 时，函数能否正确处理
+def test_chunk_text_by_sentences_long_sentence():
+    text = "A" * 80
+
+    chunks = chunk_text_by_sentences(
+        text,
+        chunk_size=30,
+        overlap=5
+    )
+
+    assert len(chunks) > 1
+    assert all(len(chunk) <= 30 for chunk in chunks)
+    assert "".join(chunks).startswith("A" * 30)
