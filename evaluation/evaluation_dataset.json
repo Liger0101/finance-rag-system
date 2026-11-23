@@ -1,0 +1,83 @@
+
+[
+  {
+    "id": 1,
+    "question_type": "事实查询",
+    "question": "海尔智家总部办公地址在哪里？",
+    "expected_answer": "山东省青岛市崂山区海尔科创生态园。",
+    "evidence": "本公司的注册地为山东省青岛市崂山区海尔科创生态园，总部办公地址为山东省青岛市崂山区海尔科创生态园。",
+    "source_page": 13
+  },
+  {
+    "id": 2,
+    "question_type": "事实查询",
+    "question": "海尔智家的主要业务是什么？",
+    "expected_answer": "家电的研发、生产及销售，以及提供智能家庭全套化解决方案。",
+    "evidence": "本公司主要从事家电的研发、生产及销售工作，涉及冰箱/冷柜、厨电、空调、洗衣设备、水家电及其他智能家庭业务，以及提供智能家庭全套化解决方案。",
+    "source_page": 13
+  },
+  {
+    "id": 3,
+    "question_type": "数字查询",
+    "question": "海尔智家2024年全球营业收入是多少？同比增长多少？",
+    "expected_answer": "全球营业收入为2859.81亿元，同比增长4.29%。",
+    "evidence": "2024年，海尔智家全球营业收入达2,859.81亿元，同比增长4.29%。",
+    "source_page": 4
+  },
+  {
+    "id": 4,
+    "question_type": "数字查询",
+    "question": "海尔智家2024年归母净利润是多少？同比增长多少？",
+    "expected_answer": "归母净利润为187.41亿元，同比增长12.92%。",
+    "evidence": "归母净利润达到187.41亿元，同比增长12.92%。",
+    "source_page": 4
+  },
+  {
+    "id": 5,
+    "question_type": "时间查询",
+    "question": "海尔智家的前身成立于哪一年？",
+    "expected_answer": "1984年。",
+    "evidence": "海尔智家股份有限公司的前身是成立于1984年的青岛电冰箱总厂。",
+    "source_page": 13
+  },
+  {
+    "id": 6,
+    "question_type": "时间查询",
+    "question": "海尔智家埃及生态园一期于何时投产？",
+    "expected_answer": "2024年5月。",
+    "evidence": "公司埃及生态园一期于2024年5月投产，首年产能突破20万台。",
+    "source_page": 4
+  },
+  {
+    "id": 7,
+    "question_type": "组合查询",
+    "question": "海尔智家2024年研发投入合计是多少？占营业收入的比例是多少？研发人员有多少？",
+    "expected_answer": "研发投入合计112.8844亿元，占营业收入比例3.95%，研发人员数量为22925人。",
+    "evidence": "研发投入合计11,288,444,271.91元；研发投入总额占营业收入比例为3.95%；公司研发人员的数量为22,925人。",
+    "source_page": 44
+  },
+  {
+    "id": 8,
+    "question_type": "跨信息查询",
+    "question": "海尔智家2024年收购了哪些业务或企业？分别有什么战略目的？",
+    "expected_answer": "收购开利商用制冷业务，拓展商用制冷业务；收购南非热水器企业Kwikot，加速水产业海外市场发展。",
+    "evidence": "战略性收购开利商用制冷业务（2024年10月并表）与南非热水器龙头Kwikot（2024年12月并表），分别实现拓展商用制冷业务、加速水产业海外市场发展。",
+    "source_page": 13
+  },
+  {
+    "id": 9,
+    "question_type": "无答案查询",
+    "question": "海尔智家2024年12月31日官方微信公众号的粉丝数量是多少？",
+    "expected_answer": null,
+    "evidence": null,
+    "source_page": null
+  },
+  {
+    "id": 10,
+    "question_type": "无答案查询",
+    "question": "海尔智家2024年在上海市的直营门店总数是多少？",
+    "expected_answer": null,
+    "evidence": null,
+    "source_page": null
+  }
+]
