@@ -2,7 +2,7 @@ from evaluation.load_dataset import load_dataset
 import json
 
 # 数据集正常加载
-def test_load_dataset():
+def test_load_dataset(tmp_path):
     data = [
         {
             "question": "公司总部在哪里？",
@@ -13,7 +13,7 @@ def test_load_dataset():
         }
     ]
 
-    file_path = 'tests/test_temp.json'
+    file_path = tmp_path/'test_tmp.json'
 
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False)
