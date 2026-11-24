@@ -100,5 +100,27 @@ def chunk_text_by_sentences(text, chunk_size=30, overlap=5):
 
     return chunks
 
+# pdf每页切片
+def chunk_pdf_pages(pages, chunk_size = 150, overlap = 30):
+    result = []
+
+    for item in pages:
+        page = item['page']
+        text = item['text']
+        chunks = chunk_text_by_sentences(
+            text,
+            chunk_size = chunk_size,
+            overlap = overlap
+        )
+
+        for chunk in chunks:
+            result.append({
+                'page': page,
+                'text':chunk
+            })
+
+    return result
+
+
 if __name__ == "__main__":
     pass
