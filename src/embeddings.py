@@ -30,5 +30,27 @@ def text_embedding(chunks: list):
             f"Embedding API 请求失败：{response.status_code} - {response.text}"
         ) from e
 
+def embed_chunks(chunks):
+    texts = []
+    for page in chunks:
+        texts.append(page['text'])
+
+    data = text_embedding(texts)
+
+    if len(chunks) != len(data):
+        raise ValueError("Embedding 数量与 Chunk 数量不一致")
+
+    new_chunks = []
+
+    for chunk, embed in zip(chunks, data):
+        new_chunk = {
+            'page': chunk['page'],
+            'text': chunk['text'],
+            'embedding': embed
+        }
+        new_chunks.append(new_chunk)
+    
+    return new_chunks
+
 if __name__ == "__main__":
     pass
